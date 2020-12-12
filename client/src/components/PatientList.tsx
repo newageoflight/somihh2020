@@ -22,6 +22,7 @@ export const PatientList: React.FC<Props> = ({ patients }) => {
                     <th id = "test-info-last-header">
                     Last Screen Performed
                     </th> 
+                    <th id = "test-status-header">Status</th>
                     <th id = "test-info-next-header">
                         Next Screen Due
                     </th>      

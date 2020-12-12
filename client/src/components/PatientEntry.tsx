@@ -13,8 +13,10 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
             </td>
             <td className="test-info-last">
                 <span>{pt.lastScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})}</span>
-                <span>{renderScreenResult(pt.lastScreenPassed)}</span>
             </td> 
+            <td className="test-status">
+                {renderScreenResult(pt.lastScreenPassed)}
+            </td>
             <td className="test-info-next">
                 {pt.nextScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})}
             </td> 
@@ -23,7 +25,7 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
 }
 
 // for some bizarre ass reason this isn't working properly, the return values just don't show up in the main component
-function renderScreenResult(result: string | null) {
+function renderScreenResult(result: number) {
     switch (result) {
         case "passed":
             return <FontAwesomeIcon icon={faCheck} />; 

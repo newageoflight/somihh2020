@@ -55,8 +55,12 @@
         }
 
         .test-info-last, #test-info-last-header {
-            width: 45%; 
+            width: 40%; 
         }
+        .test-info-last {
+            text-align: center; 
+        }
+        /*
         .test-info-last {
             display: flex; 
             flex-direction: row; 
@@ -64,8 +68,18 @@
             text-align: center;
 
         }
+        */ 
+
+        .test-status, #test-status-header {
+            width: 10%; 
+            height: 100%;  
+        }
+
         .test-info-next, #test-info-next-header {
-            width: 45%; 
+            width: 40%; 
+        }
+        .test-info-next {
+            text-align: center; 
         }
     }
 }

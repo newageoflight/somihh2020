@@ -28,6 +28,7 @@ function App() {
       const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
       const postNewStationResponse = await postNewStation.json();
       const {id: stationId} = postNewStationResponse;
+      console.log(stationId); 
       // fetch('http://localhost:4000/station-api/new', requestOptions)
       //   .then(response => response.json())
       //   .then(data => console.log(data)) 
