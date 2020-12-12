@@ -58,5 +58,47 @@ export const InitialState = [
         "lastScreenDT": "2020-12-11T13:35Z",
         "lastScreenPassed": -1,
         "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-11T13:35Z",
+        "lastScreenPassed": -1,
+        "nextScreenDT": "2020-12-12T13:35Z"
     }
 ]
