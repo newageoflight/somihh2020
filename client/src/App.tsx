@@ -6,7 +6,7 @@ import './App.css';
 import { InitialState } from './context/InitialState';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'; 
+import { faBars, faCog } from '@fortawesome/free-solid-svg-icons'; 
 import { Modal } from './components/Modal';
 
 function App() {
@@ -52,7 +52,11 @@ function App() {
       <div id = "title"><FontAwesomeIcon icon = {faBars} /> Patient List</div>
       <div className="container">
         <div className="above-table">
-          <button onClick={() => setShowModal(true)}>
+          <button className="settings">
+            <FontAwesomeIcon icon={faCog} />
+          </button>
+          
+          <button className="add-patient" onClick={() => setShowModal(true)}>
             Add patient
           </button>
         </div>

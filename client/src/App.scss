@@ -94,27 +94,42 @@
 
 .above-table {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin-bottom: 1rem;
     width: 100%;
 
     button {
         border: none;
         background: transparent; 
-        background-color: rgb(240, 188, 163); 
         font-size: 1rem;
-        cursor: pointer; 
-        padding: 1vh; 
         border-radius: 5px;
-        color: white; 
 
-        &:hover {
-            background-color: #e25f5a;
+        &.add-patient {
+            background-color: rgb(240, 188, 163); 
+            cursor: pointer; 
+            padding: 1vh; 
+            color: white; 
+
+            &:hover {
+                background-color: #e25f5a;
+            }
+
+            &:active {
+                background-color: #e25f5a;
+                color: white;
+            }
         }
 
-        &:active {
-            background-color: #e25f5a;
-            color: white;
+        &.settings {
+            color: #808088;
+
+            &:hover {
+                color: #9797a1;
+            }
+
+            &:active {
+                color: #a4a4af;
+            }
         }
     }
 }

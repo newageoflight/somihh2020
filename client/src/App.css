@@ -115,9 +115,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1rem;
   width: 100%;
 }
@@ -125,21 +125,36 @@
 .above-table button {
   border: none;
   background: transparent;
-  background-color: #f0bca3;
   font-size: 1rem;
+  border-radius: 5px;
+}
+
+.above-table button.add-patient {
+  background-color: #f0bca3;
   cursor: pointer;
   padding: 1vh;
-  border-radius: 5px;
   color: white;
 }
 
-.above-table button:hover {
+.above-table button.add-patient:hover {
   background-color: #e25f5a;
 }
 
-.above-table button:active {
+.above-table button.add-patient:active {
   background-color: #e25f5a;
   color: white;
+}
+
+.above-table button.settings {
+  color: #808088;
+}
+
+.above-table button.settings:hover {
+  color: #9797a1;
+}
+
+.above-table button.settings:active {
+  color: #a4a4af;
 }
 
 .backdrop {
