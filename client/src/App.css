@@ -161,6 +161,7 @@
 
 .above-table button.settings {
   color: #808088;
+  font-size: 5vh;
 }
 
 .above-table button.settings:hover {
