@@ -18,13 +18,14 @@ function App() {
         body: "example_station", 
       };
       
-
       console.log(InitialState); 
 
+      // create a new station
       fetch('http://localhost:4000/station-api/new', requestOptions)
         .then(response => response.json())
         .then(data => console.log(data)) 
       
+      // 
 
       const getFetch = await fetch("fake-data.json");
       const getJSON = await getFetch.json();
