@@ -1,23 +1,27 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React from 'react'; 
 import { PatientInterface } from './../interfaces/Patient';
-import { faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-solid-svg-icons';
+
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBed, faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-solid-svg-icons'; 
 
 export const PatientEntry: React.FC<PatientInterface> = (pt) => {
     return (
-        <div className="patient-entry">
-            <div className="bed-number">
-                {pt.bedNumber}
-            </div>
-            <div className="test-info">
-                <div>
-                    <span>{pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}</span>
-                </div> 
-                <div>
-                    <span>{pt.nextScreenDT.toLocaleString("en-AU")}</span>
-                </div> 
-            </div>
-        </div>
+        <tr className="patient-entry">
+            <td className="bed-number">
+                <FontAwesomeIcon icon={ faBed } />
+                {" " + pt.bedNumber}
+            </td>
+            <td className="test-info-last">
+                {pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}
+            </td> 
+            <td className="test-info-next">
+                {pt.nextScreenDT.toLocaleString("en-AU")}
+            </td> 
+            <td className="screen-result">
+                
+            </td>
+        </tr>
     )
 }
 

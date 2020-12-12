@@ -22,42 +22,45 @@
     font-weight: 700; 
     margin-bottom: 5vh; 
 }
+
 .patient-container {
     list-style-type: none;
     width: 80vw; 
     margin: 0; 
     padding: 0; 
-    border: solid 3px black;
+
+    border-collapse: collapse; 
+
+    td, th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
     
+    .patient-entry:hover {
+        background-color: rgb(149, 156, 163);
+    }
 
     .patient-entry, #table-headers {
 
         display: flex;
         align-items: center;
 
+
         .bed-number, #bed-number-header {
             margin: 0; 
-            padding: 0; 
             width: 10%; 
-            background: rgb(182, 182, 199);
             text-align: center;
         }
 
-        .test-info, #test-info-header {
-            margin: 0;
-            padding: 0; 
-            display: flex; 
-            flex-direction: row;
-            justify-content: space-evenly;
-            width: 90%;
+        .test-info-last, #test-info-last-header {
+            width: 45%; 
 
-            div {
-                display: flex; 
-                flex-direction: column; 
-            }
+        }
+        .test-info-next, #test-info-next-header {
+            width: 45%; 
         }
     }
 }
-.patient-entry:nth-child(even) {
+.patient-entry:nth-child(odd) {
     background-color: rgb(175, 195, 209); 
 }
