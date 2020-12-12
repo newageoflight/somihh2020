@@ -36,7 +36,7 @@ function App() {
       for (let index = 0; index < 10; index++) {
         let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
         let newPtPostResponse = await newPtPost.json();
-        
+        let {id: ptId} = newPtPostResponse;
       }
 
       const getFetch = await fetch("fake-data.json");
