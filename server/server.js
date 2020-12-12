@@ -5,6 +5,8 @@ var uniqid = require('uniqid');
 const { customAlphabet } = require('nanoid');
 const nanoid = customAlphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 5);
 const PORT = 4000;
+var SSE = require('express-sse');
+var sse = new SSE();
 
 
 /* Monitoring stations:
@@ -90,6 +92,7 @@ function patient_status_update(patient_id, status) {
     patients[patient_id].status = status;
     patients[patient_id].last_status_time = Date.now();
 
+    sse.send(patients[patient_id], patients[patient_id].station_id);
     return patients[patient_id];
 }
 
@@ -143,6 +146,8 @@ station.get('/:station_id/:patient_id', (req, res) => {
         res.status(202).json({status: status, last_status_time: last_status_time});
     }
 });
+
+station.get('/subscribe', sse.init);
 
 // Patient Requests
 patient.post('/register/:patient_code', (req, res) => {
