@@ -1,16 +1,1 @@
-[
-    {
-        "bedNumber": "X10N22",
-        "lastScreenDT": "2020-12-12T07:00Z",
-        "lastScreenResult": "passed",
-        "nextScreenDT": "2020-12-13T07:00Z",
-        "connected": true
-    },
-    {
-        "bedNumber": "X10N20",
-        "lastScreenDT": "2020-12-12T04:20Z",
-        "lastScreenResult": "failed",
-        "nextScreenDT": "2020-12-13T04:20Z",
-        "connected": true
-    }
-]
+[{"bedNumber": "x9n16", "lastScreenDT": "2020-12-12T15:28Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T15:28Z"}, {"bedNumber": "x9n5", "lastScreenDT": "2020-12-11T18:08Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-12T18:08Z"}, {"bedNumber": "x9n18", "lastScreenDT": "2020-12-11T01:10Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T01:10Z"}, {"bedNumber": "x9n13", "lastScreenDT": "2020-12-11T20:11Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-12T20:11Z"}, {"bedNumber": "x9n14", "lastScreenDT": "2020-12-12T07:40Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T07:40Z"}, {"bedNumber": "x9n15", "lastScreenDT": "2020-12-12T18:04Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T18:04Z"}, {"bedNumber": "x9n4", "lastScreenDT": "2020-12-11T06:26Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T06:26Z"}, {"bedNumber": "x9n4", "lastScreenDT": "2020-12-11T23:43Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T23:43Z"}, {"bedNumber": "x9n2", "lastScreenDT": "2020-12-11T22:36Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T22:36Z"}, {"bedNumber": "x9n3", "lastScreenDT": "2020-12-12T17:50Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T17:50Z"}]
