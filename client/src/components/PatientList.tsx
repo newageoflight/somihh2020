@@ -27,6 +27,7 @@ export const PatientList: React.FC<Props> = ({ patients }) => {
                     </th>      
                 </tr>
                 {
+                    
                     patients.map((pt, index) => (
                         <PatientEntry key = {index} {...pt} />
                     ))

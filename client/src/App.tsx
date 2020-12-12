@@ -6,6 +6,9 @@ import './App.css';
 import { AddPatient } from './components/AddPatient';
 import { InitialState } from './context/InitialState';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'; 
+
 function App() {
   const [appState, setAppState] = useState<Array<PatientInterface>>([]);
 
@@ -42,7 +45,7 @@ function App() {
 
   return (
     <div className="App">
-      <div id = "title">Patient List</div>
+      <div id = "title"><FontAwesomeIcon icon = {faBars} /> Patient List</div>
       <div className="container">
         <div className="above-table">
           <AddPatient />
