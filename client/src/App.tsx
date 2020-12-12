@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { PatientList } from './components/PatientList';
 import { preprocessPatients, PatientInterface } from './interfaces/Patient';
 
+import './App.scss'
+
 function App() {
   const [appState, setAppState] = useState<Array<PatientInterface>>([]);
 
