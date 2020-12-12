@@ -1,4 +1,8 @@
-
+.App {
+    border: solid 3px black;
+    width: 80vw; 
+    /* height: 50vh; */ 
+}
 .patient-container {
     list-style-type: none;
 
@@ -11,4 +15,7 @@
             margin: auto;
         }
     }
+}
+.patient-entry:nth-child(even) {
+    background-color: rosybrown; 
 }
