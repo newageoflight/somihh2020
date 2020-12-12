@@ -11,7 +11,7 @@ interface RawPatientInterface {
     lastScreenDT: string;
     lastScreenPassed: number;
     nextScreenDT: string;
-    connected: boolean;
+    connected?: boolean;
 }
 
 export function preprocessPatients(pts: Array<RawPatientInterface>): Array<PatientInterface> {
@@ -22,7 +22,7 @@ export function preprocessPatients(pts: Array<RawPatientInterface>): Array<Patie
         let lastScreenDate = new Date(lastScreenDT);
         let nextScreenDate = new Date(nextScreenDT);
         let newPt = {
-            ...rawPt, lastScreenDT: lastScreenDate, nextScreenDT: nextScreenDate
+            ...rawPt, lastScreenDT: lastScreenDate, nextScreenDT: nextScreenDate, connected: true
         }
         newPts.push(newPt);
     }
