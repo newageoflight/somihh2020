@@ -74,4 +74,39 @@
 .patient-entry:nth-child(odd) {
   background-color: #afc3d1;
 }
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.above-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.above-table button {
+  border: none;
+  background: transparent;
+  background-color: #cecfd1;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 1vh;
+  border-radius: 5px;
+}
+
+.above-table button:hover {
+  background-color: #afc3d1;
+}
+
+.above-table button:active {
+  background-color: #1b5972;
+  color: white;
+}
 /*# sourceMappingURL=App.css.map */

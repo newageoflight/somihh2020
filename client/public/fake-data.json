@@ -1,16 +1,62 @@
 [
     {
-        "bedNumber": "X10N22",
-        "lastScreenDT": "2020-12-12T07:00Z",
-        "lastScreenResult": "passed",
-        "nextScreenDT": "2020-12-13T07:00Z",
-        "connected": true
+        "bedNumber": "x9n11",
+        "lastScreenDT": "2020-12-11T23:53Z",
+        "lastScreenPassed": null,
+        "nextScreenDT": "2020-12-12T23:53Z"
     },
     {
-        "bedNumber": "X10N20",
-        "lastScreenDT": "2020-12-12T04:20Z",
-        "lastScreenResult": "failed",
-        "nextScreenDT": "2020-12-13T04:20Z",
-        "connected": true
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-12T08:56Z",
+        "lastScreenPassed": null,
+        "nextScreenDT": "2020-12-13T08:56Z"
+    },
+    {
+        "bedNumber": "x9n1",
+        "lastScreenDT": "2020-12-11T17:30Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-12T17:30Z"
+    },
+    {
+        "bedNumber": "x9n7",
+        "lastScreenDT": "2020-12-12T02:12Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T02:12Z"
+    },
+    {
+        "bedNumber": "x9n10",
+        "lastScreenDT": "2020-12-12T21:02Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T21:02Z"
+    },
+    {
+        "bedNumber": "x9n20",
+        "lastScreenDT": "2020-12-12T05:55Z",
+        "lastScreenPassed": "passed",
+        "nextScreenDT": "2020-12-13T05:55Z"
+    },
+    {
+        "bedNumber": "x9n1",
+        "lastScreenDT": "2020-12-12T02:10Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T02:10Z"
+    },
+    {
+        "bedNumber": "x9n14",
+        "lastScreenDT": "2020-12-12T11:54Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T11:54Z"
+    },
+    {
+        "bedNumber": "x9n20",
+        "lastScreenDT": "2020-12-12T20:43Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T20:43Z"
+    },
+    {
+        "bedNumber": "x9n14",
+        "lastScreenDT": "2020-12-12T13:05Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T13:05Z"
     }
 ]

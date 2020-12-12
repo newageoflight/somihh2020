@@ -1,7 +1,6 @@
 import React from 'react'; 
 import { PatientInterface } from './../interfaces/Patient';
 
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-solid-svg-icons'; 
 
@@ -10,17 +9,14 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
         <tr className="patient-entry">
             <td className="bed-number">
                 <FontAwesomeIcon icon={ faBed } />
-                {" " + pt.bedNumber}
+                {" " + pt.bedNumber.toUpperCase()}
             </td>
             <td className="test-info-last">
-                {pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}
+                {pt.lastScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})} {renderScreenResult(pt.lastScreenPassed)}
             </td> 
             <td className="test-info-next">
-                {pt.nextScreenDT.toLocaleString("en-AU")}
+                {pt.nextScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})}
             </td> 
-            <td className="screen-result">
-                
-            </td>
         </tr>
     )
 }
@@ -29,12 +25,12 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
 function renderScreenResult(result: string | null) {
     switch (result) {
         case "passed":
-            return <FontAwesomeIcon icon={faCheck} />
-        case "failed":
-            return <FontAwesomeIcon icon={faTimes} />
-        case "notDone":
-            return <FontAwesomeIcon icon={faMinus} />
-        case null:
-            return <FontAwesomeIcon icon={faQuestion} />
-    }
+                    return <FontAwesomeIcon icon={faCheck} />; 
+                case "failed":
+                    return <FontAwesomeIcon icon={faTimes} />; 
+                case "notDone":
+                    return <FontAwesomeIcon icon={faMinus} />;
+                case null:
+                    return <FontAwesomeIcon icon={faQuestion} />;
+            }
 }

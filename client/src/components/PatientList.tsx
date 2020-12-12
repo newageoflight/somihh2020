@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const PatientList: React.FC<Props> = ({ patients }) => {
-    if (patients.length == 0)  {
+    if (patients.length === 0)  {
         return (
             <div>
                 There are no patients currently being tracked. 
