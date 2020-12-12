@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBed, faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-solid-svg-icons'; 
 
 export const PatientEntry: React.FC<PatientInterface> = (pt) => {
+    console.log(pt); 
     return (
         <tr className="patient-entry">
             <td className="bed-number">
