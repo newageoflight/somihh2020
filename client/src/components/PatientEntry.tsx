@@ -3,7 +3,7 @@ import { PatientInterface } from './../interfaces/Patient';
 
 export const PatientEntry: React.FC<PatientInterface> = (pt) => {
     return (
-        <li>
+        <li className="patient-entry">
             <div className="bed-number">
                 {pt.bedNumber}
             </div>
