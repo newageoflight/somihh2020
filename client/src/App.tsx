@@ -16,37 +16,31 @@ function App() {
   useEffect(() => {
     async function getData() {
 
-      const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: "example_station", 
-      };
+      // const requestOptions = {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: "example_station", 
+      // };
       
-      console.log(InitialState); 
+      // console.log(InitialState); 
 
-      // create a new station
-      const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
-      const postNewStationResponse = await postNewStation.json();
-      const {id: stationId} = postNewStationResponse;
-      console.log(stationId); 
-      // fetch('http://localhost:4000/station-api/new', requestOptions)
-      //   .then(response => response.json())
-      //   .then(data => console.log(data)) 
+      // // create a new station
+      // const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
+      // const postNewStationResponse = await postNewStation.json();
+      // const {id: stationId} = postNewStationResponse;
+      // console.log(stationId); 
+      // // fetch('http://localhost:4000/station-api/new', requestOptions)
+      // //   .then(response => response.json())
+      // //   .then(data => console.log(data)) 
       
-      // add 10 patients
-      for (let index = 0; index < 10; index++) {
-        let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
-        let newPtPostResponse = await newPtPost.json();
-        let {id: ptId} = newPtPostResponse;
-      }
+      // // add 10 patients
+      // for (let index = 0; index < 10; index++) {
+      //   let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
+      //   let newPtPostResponse = await newPtPost.json();
+      //   let {id: ptId} = newPtPostResponse;
+      // }
 
-      const getFetch = await fetch("fake-data.json");
-      const getJSON = await getFetch.json();
-      
-      const appData = preprocessPatients(getJSON);
-      
-
-      setAppState(appData);
+      setAppState(preprocessPatients(InitialState));
 
     }
 
