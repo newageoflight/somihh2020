@@ -94,6 +94,20 @@
   height: 100%;
 }
 
+.patient-container .patient-entry .test-status, .patient-container #table-headers .test-status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 100;
+}
+
 .patient-container .patient-entry .test-info-next, .patient-container .patient-entry #test-info-next-header, .patient-container #table-headers .test-info-next, .patient-container #table-headers #test-info-next-header {
   width: 40%;
 }
