@@ -1,1 +1,62 @@
-[{"bedNumber": "x9n16", "lastScreenDT": "2020-12-12T15:28Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T15:28Z"}, {"bedNumber": "x9n5", "lastScreenDT": "2020-12-11T18:08Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-12T18:08Z"}, {"bedNumber": "x9n18", "lastScreenDT": "2020-12-11T01:10Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T01:10Z"}, {"bedNumber": "x9n13", "lastScreenDT": "2020-12-11T20:11Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-12T20:11Z"}, {"bedNumber": "x9n14", "lastScreenDT": "2020-12-12T07:40Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T07:40Z"}, {"bedNumber": "x9n15", "lastScreenDT": "2020-12-12T18:04Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T18:04Z"}, {"bedNumber": "x9n4", "lastScreenDT": "2020-12-11T06:26Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T06:26Z"}, {"bedNumber": "x9n4", "lastScreenDT": "2020-12-11T23:43Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T23:43Z"}, {"bedNumber": "x9n2", "lastScreenDT": "2020-12-11T22:36Z", "lastScreenPassed": true, "nextScreenDT": "2020-12-12T22:36Z"}, {"bedNumber": "x9n3", "lastScreenDT": "2020-12-12T17:50Z", "lastScreenPassed": false, "nextScreenDT": "2020-12-13T17:50Z"}]
+[
+    {
+        "bedNumber": "x9n11",
+        "lastScreenDT": "2020-12-11T23:53Z",
+        "lastScreenPassed": null,
+        "nextScreenDT": "2020-12-12T23:53Z"
+    },
+    {
+        "bedNumber": "x9n9",
+        "lastScreenDT": "2020-12-12T08:56Z",
+        "lastScreenPassed": null,
+        "nextScreenDT": "2020-12-13T08:56Z"
+    },
+    {
+        "bedNumber": "x9n1",
+        "lastScreenDT": "2020-12-11T17:30Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-12T17:30Z"
+    },
+    {
+        "bedNumber": "x9n7",
+        "lastScreenDT": "2020-12-12T02:12Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T02:12Z"
+    },
+    {
+        "bedNumber": "x9n10",
+        "lastScreenDT": "2020-12-12T21:02Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T21:02Z"
+    },
+    {
+        "bedNumber": "x9n20",
+        "lastScreenDT": "2020-12-12T05:55Z",
+        "lastScreenPassed": "passed",
+        "nextScreenDT": "2020-12-13T05:55Z"
+    },
+    {
+        "bedNumber": "x9n1",
+        "lastScreenDT": "2020-12-12T02:10Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T02:10Z"
+    },
+    {
+        "bedNumber": "x9n14",
+        "lastScreenDT": "2020-12-12T11:54Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T11:54Z"
+    },
+    {
+        "bedNumber": "x9n20",
+        "lastScreenDT": "2020-12-12T20:43Z",
+        "lastScreenPassed": "failed",
+        "nextScreenDT": "2020-12-13T20:43Z"
+    },
+    {
+        "bedNumber": "x9n14",
+        "lastScreenDT": "2020-12-12T13:05Z",
+        "lastScreenPassed": "notDone",
+        "nextScreenDT": "2020-12-13T13:05Z"
+    }
+]

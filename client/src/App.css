@@ -74,4 +74,24 @@
 .patient-entry:nth-child(odd) {
   background-color: #afc3d1;
 }
+
+.above-table {
+  margin-bottom: 1rem;
+}
+
+.above-table button {
+  float: right;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.above-table button:hover {
+  background-color: #ddd;
+}
+
+.above-table button:active {
+  background-color: #999;
+}
 /*# sourceMappingURL=App.css.map */

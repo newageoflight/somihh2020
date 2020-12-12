@@ -3,6 +3,7 @@ import { PatientList } from './components/PatientList';
 import { preprocessPatients, PatientInterface } from './interfaces/Patient';
 
 import './App.css';
+import { AddPatient } from './components/AddPatient';
 
 function App() {
   const [appState, setAppState] = useState<Array<PatientInterface>>([]);
@@ -22,6 +23,9 @@ function App() {
   return (
     <div className="App">
       <div id = "title">Patient List</div>
+      <div className="above-table">
+        <AddPatient />
+      </div>
       <PatientList patients={appState}/>
     </div>
   );

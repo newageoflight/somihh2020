@@ -15,7 +15,7 @@ with open("fake-data.json", "w") as ofp:
         bed_number = "x9n" + str(random.randint(1,20))
         last_screen_dt = random_date(datetime(2020, 12, 11, 0, 0, 0), datetime(2020, 12, 13, 0, 0, 0))
         next_screen_dt = last_screen_dt + timedelta(days=1)
-        last_screen_passed = bool(random.getrandbits(1))
+        last_screen_passed = random.choice(["passed", "failed", "notDone", None])
         fake_entries.append(dict(
             bedNumber=bed_number,
             lastScreenDT=last_screen_dt.strftime("%Y-%m-%dT%H:%MZ"),
