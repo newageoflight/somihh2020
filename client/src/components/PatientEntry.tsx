@@ -25,7 +25,8 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
 }
 
 // for some bizarre ass reason this isn't working properly, the return values just don't show up in the main component
-function renderScreenResult(result: string | null) {
+function renderScreenResult(result: number) {
+    console.log(result); 
     switch (result) {
         case 2:
             return <FontAwesomeIcon icon={faCheck} />; 
