@@ -1,0 +1,63 @@
+.App {
+   
+    height: 100%; 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: start;
+    align-items: center;
+    /* height: 50vh; */ 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden;
+}
+
+#title {
+    background-color: rgb(27, 89, 114);
+    color: white; 
+    width: 100%; 
+    padding: 1vh; 
+    padding-left: 5vw; 
+    width: 100vw; 
+    font-weight: 700; 
+    margin-bottom: 5vh; 
+}
+.patient-container {
+    list-style-type: none;
+    width: 80vw; 
+    margin: 0; 
+    padding: 0; 
+    border: solid 3px black;
+    
+
+    .patient-entry, #table-headers {
+
+        display: flex;
+        align-items: center;
+
+        .bed-number, #bed-number-header {
+            margin: 0; 
+            padding: 0; 
+            width: 10%; 
+            background: rgb(182, 182, 199);
+            text-align: center;
+        }
+
+        .test-info, #test-info-header {
+            margin: 0;
+            padding: 0; 
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 90%;
+
+            div {
+                display: flex; 
+                flex-direction: column; 
+            }
+        }
+    }
+}
+.patient-entry:nth-child(even) {
+    background-color: rgb(175, 195, 209); 
+}
