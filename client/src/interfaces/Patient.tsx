@@ -1,7 +1,7 @@
 export interface PatientInterface {
     bedNumber: string;
     lastScreenDT: Date;
-    lastScreenPassed: "passed" | "failed" | "notDone" | null;
+    lastScreenPassed: number;
     nextScreenDT: Date;
     connected: boolean;
 }
@@ -9,7 +9,7 @@ export interface PatientInterface {
 interface RawPatientInterface {
     bedNumber: string;
     lastScreenDT: string;
-    lastScreenPassed: "passed" | "failed" | "notDone" | null;
+    lastScreenPassed: number;
     nextScreenDT: string;
     connected: boolean;
 }

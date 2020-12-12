@@ -9,7 +9,7 @@ def random_date(start, end):
     random_second = random.randrange(int_delta)
     return start + timedelta(seconds=random_second)
 
-with open("fake-data.json", "w") as ofp:
+with open("fake-data.json", "w") as fd_ofp:
     fake_entries = []
     for i in range(10):
         bed_number = "x9n" + str(i+1)
@@ -22,4 +22,4 @@ with open("fake-data.json", "w") as ofp:
             lastScreenPassed=last_screen_passed,
             nextScreenDT=next_screen_dt.strftime("%Y-%m-%dT%H:%MZ")
         ))
-    json.dump(fake_entries, ofp)
+    json.dump(fake_entries, fd_ofp)

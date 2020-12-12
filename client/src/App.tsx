@@ -24,11 +24,19 @@ function App() {
       console.log(InitialState); 
 
       // create a new station
-      fetch('http://localhost:4000/station-api/new', requestOptions)
-        .then(response => response.json())
-        .then(data => console.log(data)) 
+      const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
+      const postNewStationResponse = await postNewStation.json();
+      const {id: stationId} = postNewStationResponse;
+      // fetch('http://localhost:4000/station-api/new', requestOptions)
+      //   .then(response => response.json())
+      //   .then(data => console.log(data)) 
       
-      // 
+      // add 10 patients
+      for (let index = 0; index < 10; index++) {
+        let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
+        let newPtPostResponse = await newPtPost.json();
+        
+      }
 
       const getFetch = await fetch("fake-data.json");
       const getJSON = await getFetch.json();
