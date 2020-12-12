@@ -10,12 +10,14 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
                 {pt.bedNumber}
             </div>
             <div className="test-info">
-                <dl>
-                    <dt>Last screen performed:</dt>
-                    <dd>{pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}</dd>
-                    <dt>Next screen due:</dt>
-                    <dd>{pt.nextScreenDT.toLocaleString("en-AU")}</dd>
-                </dl>
+                <div>
+                    <span>Last screen performed:</span>
+                    <span>{pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}</span>
+                </div> 
+                <div>
+                    <span>Next screen due:</span>
+                    <span>{pt.nextScreenDT.toLocaleString("en-AU")}</span>
+                </div> 
             </div>
         </li>
     )
