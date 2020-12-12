@@ -10,9 +10,9 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
             <div className="test-info">
                 <dl>
                     <dt>Last screen performed:</dt>
-                    <dd>{pt.lastScreenDT.toLocaleDateString("en-AU")} ({renderScreenResult(pt.lastScreenPassed)})</dd>
+                    <dd>{pt.lastScreenDT.toLocaleString("en-AU")} ({renderScreenResult(pt.lastScreenPassed)})</dd>
                     <dt>Next screen due:</dt>
-                    <dd>{pt.nextScreenDT.toLocaleDateString("en-AU")}</dd>
+                    <dd>{pt.nextScreenDT.toLocaleString("en-AU")}</dd>
                 </dl>
             </div>
         </li>

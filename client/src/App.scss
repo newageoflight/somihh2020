@@ -1,8 +1,12 @@
-.patient-entry {
-    display: flex;
-    align-items: center;
+.patient-container {
+    list-style-type: none;
 
-    div {
-        display: inline-block;
+    .patient-entry {
+        display: flex;
+        align-items: center;
+
+        div {
+            display: inline-block;
+        }
     }
 }
