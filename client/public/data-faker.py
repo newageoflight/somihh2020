@@ -12,7 +12,7 @@ def random_date(start, end):
 with open("fake-data.json", "w") as ofp:
     fake_entries = []
     for i in range(10):
-        bed_number = "x9n" + str(random.randint(1,20))
+        bed_number = "x9n" + str(i+1)
         last_screen_dt = random_date(datetime(2020, 12, 11, 0, 0, 0), datetime(2020, 12, 13, 0, 0, 0))
         next_screen_dt = last_screen_dt + timedelta(days=1)
         last_screen_passed = random.choice(["passed", "failed", "notDone", None])

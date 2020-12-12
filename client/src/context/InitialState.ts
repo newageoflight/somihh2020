@@ -1,4 +1,4 @@
-[
+export const InitialState = [
     {
         "bedNumber": "x9n0",
         "lastScreenDT": "2020-12-12T11:23Z",
