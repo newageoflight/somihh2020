@@ -60,11 +60,34 @@
 .patient-container .patient-entry .bed-number, .patient-container .patient-entry #bed-number-header, .patient-container #table-headers .bed-number, .patient-container #table-headers #bed-number-header {
   margin: 0;
   width: 10%;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .patient-container .patient-entry .test-info-last, .patient-container .patient-entry #test-info-last-header, .patient-container #table-headers .test-info-last, .patient-container #table-headers #test-info-last-header {
   width: 45%;
+}
+
+.patient-container .patient-entry .test-info-last, .patient-container #table-headers .test-info-last {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
 }
 
 .patient-container .patient-entry .test-info-next, .patient-container .patient-entry #test-info-next-header, .patient-container #table-headers .test-info-next, .patient-container #table-headers #test-info-next-header {
@@ -94,19 +117,20 @@
 .above-table button {
   border: none;
   background: transparent;
-  background-color: #cecfd1;
+  background-color: #f0bca3;
   font-size: 1rem;
   cursor: pointer;
   padding: 1vh;
   border-radius: 5px;
+  color: white;
 }
 
 .above-table button:hover {
-  background-color: #afc3d1;
+  background-color: #e2d1ca;
 }
 
 .above-table button:active {
-  background-color: #1b5972;
+  background-color: #e25f5a;
   color: white;
 }
 /*# sourceMappingURL=App.css.map */

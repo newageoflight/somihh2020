@@ -49,11 +49,19 @@
         .bed-number, #bed-number-header {
             margin: 0; 
             width: 10%; 
-            text-align: center;
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between;
         }
 
         .test-info-last, #test-info-last-header {
             width: 45%; 
+        }
+        .test-info-last {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between;
+            text-align: center;
 
         }
         .test-info-next, #test-info-next-header {
@@ -79,18 +87,19 @@
     button {
         border: none;
         background: transparent; 
-        background-color: rgb(206, 207, 209); 
+        background-color: rgb(240, 188, 163); 
         font-size: 1rem;
         cursor: pointer; 
         padding: 1vh; 
         border-radius: 5px;
+        color: white; 
 
         &:hover {
-            background-color: #afc3d1;
+            background-color: rgb(226, 209, 202); ;
         }
 
         &:active {
-            background-color: #1b5972;
+            background-color: #e25f5a;
             color: white;
         }
     }

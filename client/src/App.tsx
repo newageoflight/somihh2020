@@ -27,7 +27,6 @@ function App() {
       
       // 
 
-      /* 
       const getFetch = await fetch("fake-data.json");
       const getJSON = await getFetch.json();
       
@@ -36,7 +35,6 @@ function App() {
 
       setAppState(appData);
 
-      */ 
     }
 
     getData();

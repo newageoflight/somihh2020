@@ -9,10 +9,11 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
         <tr className="patient-entry">
             <td className="bed-number">
                 <FontAwesomeIcon icon={ faBed } />
-                {" " + pt.bedNumber.toUpperCase()}
+                <span>{pt.bedNumber.toUpperCase()}</span>
             </td>
             <td className="test-info-last">
-                {pt.lastScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})} {renderScreenResult(pt.lastScreenPassed)}
+                <span>{pt.lastScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})}</span>
+                <span>{renderScreenResult(pt.lastScreenPassed)}</span>
             </td> 
             <td className="test-info-next">
                 {pt.nextScreenDT.toLocaleString('en-AU', {timeZone: "Australia/Sydney"})}
