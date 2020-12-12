@@ -5,5 +5,12 @@
         "lastScreenResult": "passed",
         "nextScreenDT": "2020-12-13T07:00Z",
         "connected": true
+    },
+    {
+        "bedNumber": "X10N20",
+        "lastScreenDT": "2020-12-12T04:20Z",
+        "lastScreenResult": "failed",
+        "nextScreenDT": "2020-12-13T04:20Z",
+        "connected": true
     }
 ]
