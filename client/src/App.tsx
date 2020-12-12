@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div className="App">
+      <div id = "title">Patient List</div>
       <PatientList patients={appState}/>
     </div>
   );
