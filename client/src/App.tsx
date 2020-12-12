@@ -22,22 +22,22 @@ function App() {
       //   body: "example_station", 
       // };
       
-      // console.log(InitialState); 
 
       // // create a new station
       // const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
       // const postNewStationResponse = await postNewStation.json();
       // const {id: stationId} = postNewStationResponse;
-      // console.log(stationId); 
       // // fetch('http://localhost:4000/station-api/new', requestOptions)
       // //   .then(response => response.json())
       // //   .then(data => console.log(data)) 
       
       // // add 10 patients
+      // let patientIds = new Array<string>();
       // for (let index = 0; index < 10; index++) {
       //   let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
       //   let newPtPostResponse = await newPtPost.json();
       //   let {id: ptId} = newPtPostResponse;
+      //   patientIds.push(ptId)
       // }
 
       setAppState(preprocessPatients(InitialState));
@@ -55,7 +55,6 @@ function App() {
           <button className="settings">
             <FontAwesomeIcon icon={faCog} />
           </button>
-          
           <button className="add-patient" onClick={() => setShowModal(true)}>
             Add patient
           </button>
