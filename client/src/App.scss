@@ -65,22 +65,30 @@
     background-color: rgb(175, 195, 209); 
 }
 
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
 .above-table {
+    display: flex;
+    justify-content: flex-end;
     margin-bottom: 1rem;
+    width: 100%;
 
     button {
-        float: right;
         border: none;
         background: transparent;
         font-size: 1rem;
         border-radius: 5px;
 
         &:hover {
-            background-color: #ddd;
+            background-color: #afc3d1;
         }
 
         &:active {
-            background-color: #999;
+            background-color: #1b5972;
+            color: white;
         }
     }
 }

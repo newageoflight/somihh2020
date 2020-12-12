@@ -75,12 +75,23 @@
   background-color: #afc3d1;
 }
 
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
 .above-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   margin-bottom: 1rem;
+  width: 100%;
 }
 
 .above-table button {
-  float: right;
   border: none;
   background: transparent;
   font-size: 1rem;
@@ -88,10 +99,11 @@
 }
 
 .above-table button:hover {
-  background-color: #ddd;
+  background-color: #afc3d1;
 }
 
 .above-table button:active {
-  background-color: #999;
+  background-color: #1b5972;
+  color: white;
 }
 /*# sourceMappingURL=App.css.map */

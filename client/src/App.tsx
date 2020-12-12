@@ -23,10 +23,12 @@ function App() {
   return (
     <div className="App">
       <div id = "title">Patient List</div>
-      <div className="above-table">
-        <AddPatient />
+      <div className="container">
+        <div className="above-table">
+          <AddPatient />
+        </div>
+        <PatientList patients={appState}/>
       </div>
-      <PatientList patients={appState}/>
     </div>
   );
 }
