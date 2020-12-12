@@ -1,19 +1,17 @@
 export interface PatientInterface {
     bedNumber: string;
     lastScreenDT: Date;
-    lastScreenPassed: "passed" | "failed" | "notDone" | null;
+    lastScreenPassed: number;
     nextScreenDT: Date;
     connected: boolean;
-    interactive: boolean;
 }
 
 interface RawPatientInterface {
     bedNumber: string;
     lastScreenDT: string;
-    lastScreenPassed: "passed" | "failed" | "notDone" | null;
+    lastScreenPassed: number;
     nextScreenDT: string;
     connected: boolean;
-    interactive: boolean;
 }
 
 export function preprocessPatients(pts: Array<RawPatientInterface>): Array<PatientInterface> {

@@ -27,13 +27,13 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
 // for some bizarre ass reason this isn't working properly, the return values just don't show up in the main component
 function renderScreenResult(result: number) {
     switch (result) {
-        case "passed":
+        case 2:
             return <FontAwesomeIcon icon={faCheck} />; 
-        case "failed":
+        case -2:
             return <FontAwesomeIcon icon={faTimes} />; 
-        case "notDone":
+        case 3:
             return <FontAwesomeIcon icon={faMinus} />;
-        case null:
+        case -1:
             return <FontAwesomeIcon icon={faQuestion} />;
     }
 }
