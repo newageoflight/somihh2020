@@ -55,6 +55,15 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  /*
+        .test-info-last {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: space-between;
+            text-align: center;
+
+        }
+        */
 }
 
 .patient-container .patient-entry .bed-number, .patient-container .patient-entry #bed-number-header, .patient-container #table-headers .bed-number, .patient-container #table-headers #bed-number-header {
@@ -73,25 +82,24 @@
 }
 
 .patient-container .patient-entry .test-info-last, .patient-container .patient-entry #test-info-last-header, .patient-container #table-headers .test-info-last, .patient-container #table-headers #test-info-last-header {
-  width: 45%;
+  width: 40%;
 }
 
 .patient-container .patient-entry .test-info-last, .patient-container #table-headers .test-info-last {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   text-align: center;
 }
 
+.patient-container .patient-entry .test-status, .patient-container .patient-entry #test-status-header, .patient-container #table-headers .test-status, .patient-container #table-headers #test-status-header {
+  width: 10%;
+  height: 100%;
+}
+
 .patient-container .patient-entry .test-info-next, .patient-container .patient-entry #test-info-next-header, .patient-container #table-headers .test-info-next, .patient-container #table-headers #test-info-next-header {
-  width: 45%;
+  width: 40%;
+}
+
+.patient-container .patient-entry .test-info-next, .patient-container #table-headers .test-info-next {
+  text-align: center;
 }
 
 .patient-entry:nth-child(odd) {
