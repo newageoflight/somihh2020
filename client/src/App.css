@@ -12,6 +12,9 @@
 }
 
 .patient-container .patient-entry div {
-  display: inline-block;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin: auto;
 }
 /*# sourceMappingURL=App.css.map */
