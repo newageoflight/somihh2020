@@ -5,19 +5,17 @@ import { faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-solid-s
 
 export const PatientEntry: React.FC<PatientInterface> = (pt) => {
     return (
-        <div className="patient-entry">
-            <div className="bed-number">
+        <tr className="patient-entry">
+            <td className="bed-number">
                 {pt.bedNumber}
-            </div>
-            <div className="test-info">
-                <div>
-                    <span>{pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}</span>
-                </div> 
-                <div>
-                    <span>{pt.nextScreenDT.toLocaleString("en-AU")}</span>
-                </div> 
-            </div>
-        </div>
+            </td>
+            <td className="test-info-last">
+                {pt.lastScreenDT.toLocaleString("en-AU")} {renderScreenResult(pt.lastScreenPassed)}
+            </td> 
+            <td className="test-info-next">
+                {pt.nextScreenDT.toLocaleString("en-AU")}
+            </td> 
+        </tr>
     )
 }
 
