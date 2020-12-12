@@ -56,6 +56,17 @@ function new_patient(station_id) {
     return {id: patient_id, code: code};
 }
 
+// Patients for a station
+function get_all_patients(station_id, callback) {
+    results = {}
+    
+    monitoring_stations[station_id].forEach(function(patient_id){
+        results[patient_id] = patients[patient_id];
+    });
+
+    callback(results);
+}
+
 // Update patient
 function update_patient(patient_id, frequency, interactive) {
 
@@ -96,6 +107,14 @@ station.post('/new', (req, res) => {
 station.post('/:station_id', (req, res) => {
     console.log("[S/POST] Given Station ID: " + req.params.station_id);
     res.status(201).json(new_patient(req.params.station_id));
+});
+
+station.get('/:station_id', (req, res) => {
+    console.log("[S/GET] Given Station ID: " + req.params.station_id);
+
+    get_all_patients(req.params.station_id, (value) => {
+        res.status(200).json(value);
+    });
 });
 
 station.post('/:station_id/:patient_id', (req, res) => {
