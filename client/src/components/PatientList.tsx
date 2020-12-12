@@ -10,8 +10,8 @@ export const PatientList: React.FC<Props> = ({ patients }) => {
     return (
         <ul className="patient-container">
             {
-                patients.map((pt) => (
-                    <PatientEntry {...pt} />
+                patients.map((pt, index) => (
+                    <PatientEntry key = {index} {...pt} />
                 ))
             }
         </ul>
