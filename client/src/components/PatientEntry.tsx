@@ -18,9 +18,6 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
             <td className="test-info-next">
                 {pt.nextScreenDT.toLocaleString("en-AU")}
             </td> 
-            <td className="screen-result">
-                
-            </td>
         </tr>
     )
 }
@@ -29,12 +26,12 @@ export const PatientEntry: React.FC<PatientInterface> = (pt) => {
 function renderScreenResult(result: string | null) {
     switch (result) {
         case "passed":
-            return <FontAwesomeIcon icon={faCheck} />
-        case "failed":
-            return <FontAwesomeIcon icon={faTimes} />
-        case "notDone":
-            return <FontAwesomeIcon icon={faMinus} />
-        case null:
-            return <FontAwesomeIcon icon={faQuestion} />
-    }
+                    return <FontAwesomeIcon icon={faCheck} />; 
+                case "failed":
+                    return <FontAwesomeIcon icon={faTimes} />; 
+                case "notDone":
+                    return <FontAwesomeIcon icon={faMinus} />;
+                case null:
+                    return <FontAwesomeIcon icon={faQuestion} />;
+            }
 }

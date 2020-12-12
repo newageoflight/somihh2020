@@ -2,14 +2,14 @@
     {
         "bedNumber": "X10N22",
         "lastScreenDT": "2020-12-12T07:00Z",
-        "lastScreenResult": "passed",
+        "lastScreenPassed": "passed",
         "nextScreenDT": "2020-12-13T07:00Z",
         "connected": true
     },
     {
         "bedNumber": "X10N20",
         "lastScreenDT": "2020-12-12T04:20Z",
-        "lastScreenResult": "failed",
+        "lastScreenPassed": "failed",
         "nextScreenDT": "2020-12-13T04:20Z",
         "connected": true
     }
