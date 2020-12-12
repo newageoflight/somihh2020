@@ -1,7 +1,6 @@
 import React from 'react'
 import { PatientInterface } from './../interfaces/Patient';
 import { PatientEntry } from './PatientEntry';
-
 interface Props {
     patients: Array<PatientInterface>;    
 }
