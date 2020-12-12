@@ -49,7 +49,7 @@ export const Modal: React.FC<Props> = (props) => {
             {
                 (open || active) && (
                     <Portal className="modal-portal">
-                        <div className={"backdrop " + (active && open && "active")} ref={backdrop}>
+                        <div className={active && open ? "backdrop active" : "hidden"} ref={backdrop}>
                             <div className="content modal-content">
                                 {props.children}
                             </div>
