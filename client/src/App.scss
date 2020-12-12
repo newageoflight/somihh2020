@@ -78,8 +78,11 @@
 
     button {
         border: none;
-        background: transparent;
+        background: transparent; 
+        background-color: rgb(206, 207, 209); 
         font-size: 1rem;
+        cursor: pointer; 
+        padding: 1vh; 
         border-radius: 5px;
 
         &:hover {
