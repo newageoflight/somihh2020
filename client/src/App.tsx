@@ -3,14 +3,15 @@ import { PatientList } from './components/PatientList';
 import { preprocessPatients, PatientInterface } from './interfaces/Patient';
 
 import './App.css';
-import { AddPatient } from './components/AddPatient';
 import { InitialState } from './context/InitialState';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'; 
+import { Modal } from './components/Modal';
 
 function App() {
   const [appState, setAppState] = useState<Array<PatientInterface>>([]);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     async function getData() {
@@ -57,9 +58,14 @@ function App() {
       <div id = "title"><FontAwesomeIcon icon = {faBars} /> Patient List</div>
       <div className="container">
         <div className="above-table">
-          <AddPatient />
+          <button onClick={() => setShowModal(true)}>
+            Add patient
+          </button>
         </div>
         <PatientList patients={appState}/>
+        <Modal onClose={() => setShowModal(false)} open={showModal}>
+          <p>Show patient ID</p>
+        </Modal>
       </div>
     </div>
   );
