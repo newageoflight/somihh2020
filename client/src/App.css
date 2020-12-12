@@ -36,7 +36,16 @@
   width: 80vw;
   margin: 0;
   padding: 0;
-  border: solid 3px black;
+  border-collapse: collapse;
+}
+
+.patient-container td, .patient-container th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.patient-container .patient-entry:hover {
+  background-color: #959ca3;
 }
 
 .patient-container .patient-entry, .patient-container #table-headers {
@@ -50,39 +59,19 @@
 
 .patient-container .patient-entry .bed-number, .patient-container .patient-entry #bed-number-header, .patient-container #table-headers .bed-number, .patient-container #table-headers #bed-number-header {
   margin: 0;
-  padding: 0;
   width: 10%;
-  background: #b6b6c7;
   text-align: center;
 }
 
-.patient-container .patient-entry .test-info, .patient-container .patient-entry #test-info-header, .patient-container #table-headers .test-info, .patient-container #table-headers #test-info-header {
-  margin: 0;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  width: 90%;
+.patient-container .patient-entry .test-info-last, .patient-container .patient-entry #test-info-last-header, .patient-container #table-headers .test-info-last, .patient-container #table-headers #test-info-last-header {
+  width: 45%;
 }
 
-.patient-container .patient-entry .test-info div, .patient-container .patient-entry #test-info-header div, .patient-container #table-headers .test-info div, .patient-container #table-headers #test-info-header div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+.patient-container .patient-entry .test-info-next, .patient-container .patient-entry #test-info-next-header, .patient-container #table-headers .test-info-next, .patient-container #table-headers #test-info-next-header {
+  width: 45%;
 }
 
-.patient-entry:nth-child(even) {
+.patient-entry:nth-child(odd) {
   background-color: #afc3d1;
 }
 /*# sourceMappingURL=App.css.map */

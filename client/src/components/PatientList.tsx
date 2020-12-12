@@ -7,24 +7,32 @@ interface Props {
 }
 
 export const PatientList: React.FC<Props> = ({ patients }) => {
-    return (
-        <div className="patient-container">
-            <div id = "table-headers">
-                <div id = "bed-number-header">Bed Number</div>
-                <div id = "test-info-header">
-                    <div>
-                        <span>Last Screen Performed</span>
-                    </div>
-                    <div>
-                        <span>Next Screen Due</span>
-                    </div>      
-                </div>
+    if (patients.length == 0)  {
+        return (
+            <div>
+                There are no patients currently being tracked. 
             </div>
-            {
-                patients.map((pt, index) => (
-                    <PatientEntry key = {index} {...pt} />
-                ))
-            }
-        </div>
-    )
+        )
+    } else {
+        return (
+            <table className="patient-container">
+                <tbody>
+                <tr id = "table-headers">
+                    <th id = "bed-number-header">Bed Number</th>
+                    <th id = "test-info-last-header">
+                    Last Screen Performed
+                    </th> 
+                    <th id = "test-info-next-header">
+                        Next Screen Due
+                    </th>      
+                </tr>
+                {
+                    patients.map((pt, index) => (
+                        <PatientEntry key = {index} {...pt} />
+                    ))
+                }
+                </tbody>
+            </table>
+        )
+    }
 }
