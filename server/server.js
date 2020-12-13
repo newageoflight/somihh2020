@@ -51,18 +51,18 @@ function new_patient(station_id) {
         interactive_mode: 0,
         settings_changed: 1
     };
-    
+
     code = nanoid();
     pending_codes[code] = patient_id;
-    
-    return {id: patient_id, code: code};
+
+    return { id: patient_id, code: code };
 }
 
 // Patients for a station
 function get_all_patients(station_id, callback) {
     results = {}
-    
-    monitoring_stations[station_id].forEach(function(patient_id){
+
+    monitoring_stations[station_id].forEach(function (patient_id) {
         results[patient_id] = patients[patient_id];
     });
 
@@ -104,7 +104,7 @@ app.use(cors());
 station.post('/new', (req, res) => {
     id = new_station();
     console.log("[S/POST] New station, given id: " + id.toString());
-    res.status(200).json({id: id});
+    res.status(200).json({ id: id });
 });
 
 station.post('/:station_id', (req, res) => {
@@ -125,7 +125,7 @@ station.post('/:station_id/:patient_id', (req, res) => {
 
     if (!(req.params.station_id in monitoring_stations)) {
         res.status(400).send('Bad Request.');
-    } else if(!monitoring_stations[req.params.station_id].includes(req.params.patient_id)) {
+    } else if (!monitoring_stations[req.params.station_id].includes(req.params.patient_id)) {
         res.status(403).send('Unauthorised.');
     } else {
         update_patient(req.params.patient_id, req.query.frequency, req.query.interactive);
@@ -138,22 +138,75 @@ station.get('/:station_id/:patient_id', (req, res) => {
 
     if (!(req.params.station_id in monitoring_stations)) {
         res.status(400).send('Bad Request');
-    } else if(!monitoring_stations[req.params.station_id].includes(req.params.patient_id)) {
+    } else if (!monitoring_stations[req.params.station_id].includes(req.params.patient_id)) {
         res.status(403).send('Unauthorised.');
     } else {
         status = patients[req.params.patient_id].status;
         last_status_time = patients[req.params.patient_id].last_status_time;
-        res.status(202).json({status: status, last_status_time: last_status_time});
+        res.status(202).json({ status: status, last_status_time: last_status_time });
     }
 });
 
 station.get('/subscribe', sse.init);
 
+adminRes;
+
+// response header for sever-sent events
+const SSE_RESPONSE_HEADER = {
+    'Connection': 'keep-alive',
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'X-Accel-Buffering': 'no',
+    'Access-Control-Allow-Origin': '*',
+};
+
+app.get('/stream', (req, res) => {
+
+    console.log('CALLED !!')
+
+    let userId = req.params.userId;
+    console.log(req, 'req')
+    console.log('userid', userId)
+
+    // Stores this connection
+    adminRes = res;
+
+    // Writes response header.
+    res.writeHead(200, SSE_RESPONSE_HEADER);
+    // Interval loop
+    let intervalId = setInterval(function () {
+        console.log(`*** Interval loop. userId: "${userId}"`);
+        // Note: 
+        // For avoidance of client's request timeout, 
+        // you should send a heartbeat data like ':\n\n' (means "comment") at least every 55 sec (30 sec for first time request)
+        // even if you have no sending data:
+        res.write(`:\n\n`);
+    }, 50000);
+
+    // Note: Heatbeat for avoidance of client's request timeout of first time (30 sec) 
+    res.write(`:\n\n`);
+
+    req.on("close", function () {
+        let userId = req.params.userId;
+        console.log(`*** Close. userId: "${userId}"`);
+        // Breaks the interval loop on client disconnected
+        clearInterval(intervalId);
+        // Remove from connections
+        // delete streams[userId];
+    });
+
+    req.on("end", function () {
+        let userId = getUserId(req);
+        console.log(`*** End. userId: "${userId}"`);
+    });
+
+});
+
 // Patient Requests
 patient.post('/register/:patient_code', (req, res) => {
     console.log("[P/POST] Registering patient, code: " + req.params.patient_code);
     if (req.params.patient_code in pending_codes) {
-        res.status(200).json({id: pending_codes[req.params.patient_code]});
+        res.status(200).json({ id: pending_codes[req.params.patient_code] });
         patient_status_update(pending_codes[req.params.patient_code], 0);
         delete pending_codes[req.params.patient_code];
     } else {
@@ -163,7 +216,10 @@ patient.post('/register/:patient_code', (req, res) => {
 
 patient.post('/:patient_id', (req, res) => {
     console.log("[P/POST] Given Patient ID: " + req.params.patient_id);
-    patient_status_update(req.params.patient_id, req.query.status);
+    // patient_status_update(req.params.patient_id, req.query.status);
+    if (adminRes) {
+        adminRes.write(`data: ${JSON.stringify({ newPatient: 'added' })}\n\n`);
+    }
     res.status(202).send('Updated.');
 });
 
@@ -177,6 +233,6 @@ patient.get('/:patient_id', (req, res) => {
 app.use('/station-api', station);
 app.use('/patient-api', patient);
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("Server is running on Port: " + PORT);
 });
