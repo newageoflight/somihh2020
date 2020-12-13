@@ -47,7 +47,12 @@ function App() {
       //   patientIds.push(ptId)
       // }
 
+      //console.log(InitialState[3].lastScreenDT);
+
+      //console.log(new Date().toISOString()); 
       setAppState(preprocessPatients(InitialState));
+
+      
 
       //console.log(InitialState[3].lastScreenPassed); 
 
@@ -76,8 +81,14 @@ function App() {
         */ 
 
        InitialState[3].lastScreenPassed = 2; 
+       InitialState[3].lastScreenDT = new Date().toISOString(); 
 
-       setAppState(preprocessPatients(InitialState)); 
+      //set the next screen for 1 hour!
+      let myDate = new Date(); 
+      myDate.setHours( myDate.getHours() + 1 );
+      InitialState[3].nextScreenDT = myDate.toISOString();  
+
+      setAppState(preprocessPatients(InitialState)); 
 
       };
 
