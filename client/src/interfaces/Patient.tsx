@@ -6,6 +6,11 @@ export interface PatientInterface {
     connected: boolean;
 }
 
+export interface ServerPatient {
+    id: string;
+    code: string;
+}
+
 interface RawPatientInterface {
     bedNumber: string;
     lastScreenDT: string;
