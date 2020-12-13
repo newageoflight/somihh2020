@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { PatientList } from './components/PatientList';
-import { preprocessPatients, PatientInterface } from './interfaces/Patient';
+import { preprocessPatients, PatientInterface, ServerPatient } from './interfaces/Patient';
 
 import './App.css';
 import { InitialState } from './context/InitialState';
@@ -8,6 +8,7 @@ import { InitialState } from './context/InitialState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faCog } from '@fortawesome/free-solid-svg-icons'; 
 import { Modal } from './components/Modal';
+import { getRandomIntegerInclusive } from './utils/RandomInteger';
 
 function App() {
 
@@ -31,21 +32,26 @@ function App() {
       
 
       // // create a new station
-      // const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
-      // const postNewStationResponse = await postNewStation.json();
-      // const {id: stationId} = postNewStationResponse;
-      // // fetch('http://localhost:4000/station-api/new', requestOptions)
-      // //   .then(response => response.json())
-      // //   .then(data => console.log(data)) 
+      const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
+      const postNewStationResponse = await postNewStation.json();
+      const {id: stationId} = postNewStationResponse;
       
       // // add 10 patients
-      // let patientIds = new Array<string>();
-      // for (let index = 0; index < 10; index++) {
-      //   let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
-      //   let newPtPostResponse = await newPtPost.json();
-      //   let {id: ptId} = newPtPostResponse;
-      //   patientIds.push(ptId)
-      // }
+      let patientIds = new Array<ServerPatient>();
+      for (let index = 0; index < 10; index++) {
+        let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
+        let newPtPostResponse = await newPtPost.json();
+        let {id: newPtId, code: newPtCode} = newPtPostResponse;
+        // set options randomly
+        await fetch(`http://localhost:4000/station-api/${stationId}/${newPtId}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            frequency: getRandomIntegerInclusive(1,4),
+            interactive: getRandomIntegerInclusive(0,1)
+          })
+        })
+      }
 
       setAppState(preprocessPatients(InitialState));
 
