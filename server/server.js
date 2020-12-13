@@ -149,7 +149,7 @@ station.get('/:station_id/:patient_id', (req, res) => {
 
 station.get('/subscribe', sse.init);
 
-adminRes;
+let adminRes;
 
 // response header for sever-sent events
 const SSE_RESPONSE_HEADER = {
@@ -218,9 +218,11 @@ patient.post('/:patient_id', (req, res) => {
     console.log("[P/POST] Given Patient ID: " + req.params.patient_id);
     // patient_status_update(req.params.patient_id, req.query.status);
     if (adminRes) {
+        console.log('writtend to stream')
         adminRes.write(`data: ${JSON.stringify({ newPatient: 'added' })}\n\n`);
     }
-    res.status(202).send('Updated.');
+    res.status(200).json({ id: pending_codes[req.params.patient_code] });
+    // res.status(202).send('Updated.');
 });
 
 patient.get('/:patient_id', (req, res) => {
