@@ -16,47 +16,22 @@ function App() {
 
   const [showModal, setShowModal] = useState(false);
 
-  //set initial state 
-  // useEffect(() => {
-  //   async function getData() {
+  
+  //set the initial state 
+   useEffect(() => { 
 
-  //     //localhost/4000/stream 
+      let oldDateObj, newDateObj; 
+      let randomMinutes; 
+      InitialState.forEach((elem, index) => {
+        oldDateObj = new Date(); 
+        randomMinutes = Math.floor(Math.random() * 59) + 1; 
+        newDateObj = new Date(oldDateObj.getTime() - randomMinutes*60000);
+        elem.lastScreenDT = newDateObj.toISOString(); 
+        newDateObj.setHours( newDateObj.getHours() + 1 );
+        elem.nextScreenDT = newDateObj.toISOString(); 
+      });
 
-
-
-  //     // const requestOptions = {
-  //     //   method: 'POST',
-  //     //   headers: { 'Content-Type': 'application/json' },
-  //     //   body: "example_station", 
-  //     // };
-      
-
-  //     // // create a new station
-  //     // const postNewStation = await fetch("http://localhost:4000/station-api/new", requestOptions)
-  //     // const postNewStationResponse = await postNewStation.json();
-  //     // const {id: stationId} = postNewStationResponse;
-      
-      // // add 10 patients
-      // let patientIds = new Array<string>();
-      // for (let index = 0; index < 10; index++) {
-      //   let newPtPost = await fetch(`http://localhost:4000/station-api/${stationId}`, requestOptions);
-      //   let newPtPostResponse = await newPtPost.json();
-      //   let {id: ptId} = newPtPostResponse;
-      //   patientIds.push(ptId)
-      // }
-
-      //console.log(InitialState[3].lastScreenDT);
-
-      //console.log(new Date().toISOString()); 
       setAppState(preprocessPatients(InitialState));
-
-      
-
-      //console.log(InitialState[3].lastScreenPassed); 
-
-    }
-
-    getData();
   }, [])
 
 
