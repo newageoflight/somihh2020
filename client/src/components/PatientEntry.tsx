@@ -6,8 +6,15 @@ import { faBed, faCheck, faTimes, faQuestion, faMinus } from '@fortawesome/free-
 import ReactTooltip from 'react-tooltip';
 
 export const PatientEntry: React.FC<PatientInterface> = (pt) => {
+
+    let patientStyle = {
+        backgroundColor: '', 
+    }; 
+    
+    pt.lastScreenPassed === -2 ? patientStyle.backgroundColor = "#f06356" : pt.lastScreenPassed === 3 ? patientStyle.backgroundColor = "#f0d969" : pt.lastScreenPassed === 2 ? patientStyle.backgroundColor = "#c6f0b4" : patientStyle.backgroundColor = "white"; 
+    
     return (
-        <tr className="patient-entry">
+        <tr className="patient-entry" style = {patientStyle}>
             <td className="bed-number">
                 <FontAwesomeIcon icon={ faBed } />
                 <span>{pt.bedNumber.toUpperCase()}</span>

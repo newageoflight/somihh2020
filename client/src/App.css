@@ -51,7 +51,7 @@
 }
 
 .patient-container .patient-entry:hover {
-  background-color: #959ca3;
+  background-color: #959ca3 !important;
 }
 
 .patient-container .patient-entry, .patient-container #table-headers {

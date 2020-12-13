@@ -10,11 +10,18 @@ import { faBars, faCog } from '@fortawesome/free-solid-svg-icons';
 import { Modal } from './components/Modal';
 
 function App() {
+
   const [appState, setAppState] = useState<Array<PatientInterface>>([]);
+
   const [showModal, setShowModal] = useState(false);
 
+  //set initial state 
   useEffect(() => {
     async function getData() {
+
+      //localhost/4000/stream 
+
+
 
       // const requestOptions = {
       //   method: 'POST',
@@ -42,10 +49,41 @@ function App() {
 
       setAppState(preprocessPatients(InitialState));
 
+      //console.log(InitialState[3].lastScreenPassed); 
+
     }
 
     getData();
   }, [])
+
+
+  useEffect(() => {
+    
+    let events = new EventSource("http://localhost:4000/stream");
+
+      events.onmessage = event => {
+
+        //not used, hard-coded instead 
+        const parsedData = JSON.parse(event.data);
+        
+
+        console.log(event); 
+
+        console.log("Initial state \n", InitialState); 
+        
+        /*
+        setAppState(preprocessPatients(parsedData)); 
+        */ 
+
+       InitialState[3].lastScreenPassed = 2; 
+
+       setAppState(preprocessPatients(InitialState)); 
+
+      };
+
+  }, []) 
+
+
 
   return (
     <div className="App">
